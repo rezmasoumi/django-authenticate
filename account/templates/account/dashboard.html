@@ -1,0 +1,29 @@
+{% extends "account/base.html" %} {% block content %}
+<div class="container">
+  <p class="display-4">
+    Hello, ' {% if username.first_name %} {{username.first_name}}
+    {{username.last_name}} {% else %} {{username.username}} {% endif %} '
+  </p>
+  <hr />
+  <div class="col-6 float-left"></div>
+  <div class="col-6 float-right">
+    <div class="card border-dark m-2">
+      <div class="card-header">User profile</div>
+      <div class="card-body">
+        <p class="card-text">
+          <label>First name: {{username.first_name}}</label><br />
+          <label>Last name: {{username.last_name}}</label><br />
+          <label>Email: {{username.email}}</label><br />
+          <a href="/dashboard/edit" class="btn btn-primary mt-4"
+            >Edit Profile</a
+          >
+          <a href="/dashboard/changepassword" class="btn btn-warning mt-4"
+            >Change password</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
